@@ -1,11 +1,10 @@
-# sql
-## SQL projects
+# SQL projects
 
 
-| Project Name  | Notes        
-| ------------- |:-------------------------------------:|
-| [Music Sales Project](https://github.com/djs-djs/sql/blob/main/Music%20Sales%20Project.sql)|  |
-|    |      |
-|  |      |
-|  |      |
-|  |      |
+| Project Name                                                                               | Notes        
+| ------------------------------------------------------------------------------------------ |:-------------------------------------:|
+| [Music Sales Project](https://github.com/djs-djs/sql/blob/main/Music%20Sales%20Project.sql)|                                       |
+|                                                                                            |      |
+|                                                                                            |      |
+|                                                                                            |      |
+|                                                                                            |      |
