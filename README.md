@@ -11,7 +11,7 @@
 
 
 
-```
+```SQL
 select *
 from H2
 
