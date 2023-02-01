@@ -1,4 +1,4 @@
-# SQL projects
+# SQL scripts and projects
 
 
 | Project Name                                                                               | Notes        
