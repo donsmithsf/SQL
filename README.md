@@ -11,11 +11,9 @@
 
 
 
-<<<<<<< Updated upstream
 ```SQL
 select *
 from H2
 
 ```
-=======
->>>>>>> Stashed changes
+
