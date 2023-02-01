@@ -21,16 +21,12 @@ SELECT Customer.LastName, Customer.FirstName, Customer.City, Invoice.BillingCoun
 FROM Customer 
 LEFT JOIN Invoice
 ON Customer.CustomerId  = Invoice.CustomerId
-where customer.lastname == 'Holý'
-OR customer.lastname == 'Cunningham'
-OR customer.lastname == 'Rojas'
-OR customer.lastname == 'Kovács'
-OR customer.lastname == "O'Reilly"
+where customer.CustomerId in ('6', '26', '57', '45', '46')
 --Group by Customer.CustomerId 
-ORDER BY customer.LastName ;
+ORDER BY customer.LastName;
 
 --Total purchases aggregated by date
-SELECT (InvoiceDate), sum(Total) as 'Purchase Total'
+SELECT strftime('%Y-%m-%d', InvoiceDate), sum(Total) as 'Purchase Total'
 FROM Invoice
 Group by InvoiceDate
 ORDER BY sum(Total) desc;
@@ -108,6 +104,34 @@ Group by "Month"
 ORDER BY "Purchase Total" desc;
 
 
+--Total purchases aggregated by month and year
+SELECT 
+	strftime('%Y', invoicedate) as "Year",
+	case cast (strftime('%m', invoicedate) as integer)
+	when 1 then 'January'
+	when 2 then 'February'
+	when 3 then 'March'
+	when 4 then 'April'
+	when 5 then 'May'
+	when 6 then 'June'
+	when 7 then 'July'
+	when 8 then 'August'
+	when 9 then 'September'
+	when 10 then 'October'
+	when 11 then 'November'
+	else 'December'end as "Month",
+	sum(Total) as 'Purchase Total'
+FROM Invoice
+Group by "Year", "Month"
+--ORDER BY "Purchase Total" desc;
+
+--Month and day where greatest number of transactions happened
+SELECT strftime('%m-%d', invoicedate) as 'Month/Day', count(strftime('%m-%d', invoicedate) ) as 'number of occurancnes', sum(Total) as 'Purchase Total'
+FROM Invoice
+Group by "Month/Day"
+ORDER BY count('number of occurancnes') desc;
+
+
 select distinct b.CustomerId, a.LastName, a.FirstName, sum(b.Total)
 from Invoice b
 LEFT JOIN Customer a
@@ -124,14 +148,32 @@ ON a.ArtistId  = b.ArtistId) as c
 INNER JOIN Track as d
 on c.AlbumId = d.AlbumId 
 
-select "Year", "Purchase Total"
-From (SELECT 
+SELECT 
     strftime('%Y', invoicedate) AS "Year",
-    strftime('%m', invoicedate) AS "Month",
-    strftime('%d', invoicedate) AS "Day",  
-	sum(Total) as 'Purchase Total'
+    case cast (strftime('%m', invoicedate) as integer)
+		when 1 then 'January'
+		when 2 then 'February'
+		when 3 then 'March'
+		when 4 then 'April'
+		when 5 then 'May'
+		when 6 then 'June'
+		when 7 then 'July'
+		when 8 then 'August'
+		when 9 then 'September'
+		when 10 then 'October'
+		when 11 then 'November'
+		else 'December'end as "Month",
+	strftime('%d', invoicedate) AS "Day",
+	case cast (strftime('%w', invoicedate) as integer)
+ 		when 0 then 'Sunday'
+ 		when 1 then 'Monday'
+ 		when 2 then 'Tuesday'
+ 		when 3 then 'Wednesday'
+	 	when 4 then 'Thursday'
+	  	when 5 then 'Friday'
+	  	else 'Saturday' end as Weekday,
+	  	Total as 'Purchase Total'
 FROM Invoice
-Group by "Year", "Month", "Day")
-Group by "Year"
+--Group by "Year"
 --ORDER BY "Year" desc;
 
