@@ -40,4 +40,4 @@ SELECT
   WHEN 4 then 'Thursday'
   WHEN 5 then 'Friday'
   ELSE 'Saturday' END AS weekday
-FROM TABLE_NAME
+FROM TABLE_NAME;
