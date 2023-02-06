@@ -9,7 +9,7 @@
 #Pulling from a data/time string,cConverting numerical representations of months to their English equivilents 
 
 SELECT 
-  CASE CAST (strftime('%m', COLUMN_NAME) AS integer)
+  CASE CAST (strftime('%m', DATETIME_COLUMN_NAME_STRING) AS integer)
   #Covert numerical representation of months to text
   WHEN 1 then 'January'
   WHEN 2 then 'February'
@@ -31,7 +31,7 @@ FROM TABLE_NAME;
 #Determine the day of the week each date falls on
 
 SELECT
-  CASE CAST (strftime('%w', COLUMN_NAME) AS integer)
+  CASE CAST (strftime('%w', DATETIME_COLUMN_NAME_STRING) AS integer)
   #Assigns a number from 0-6 which corresponds to a day of week
   WHEN 0 then 'Sunday'
   WHEN 1 then 'Monday'
