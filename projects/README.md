@@ -1,6 +1,6 @@
 # SQL Projects
 
-|Project Name                                                                        | Notes        
+|Project Name                                                                        | Notes        |
 | ----------------------------------------------------------------------------------- |:------------------------:|
 | [Music Sales]() |                       |
 | [Liquor Sales]()|                       |   
