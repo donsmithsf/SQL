@@ -5,7 +5,7 @@
 --Total number of customers
 select distinct count(CustomerId)
 from Customer
-order by CustomerId 
+order by CustomerId
 
 --List of top 5 high-spend customers, Purchase Totals, and number of purcahses
 SELECT a.CustomerId, a.LastName, a.FirstName, a.City, a.Country, sum(b.Total) as 'Purchase Total', count(b.Total) as 'Number of Purchases'
