@@ -22,3 +22,7 @@ Conclusions:    "Generally, vendors should focus on building partnerships with t
     -Linn: 3385, 3773
     -Scott: 3952, 3354, 2625
 5. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline"
+
+```{sql}
+
+```
