@@ -4,6 +4,8 @@ You’ll focus on how to allocate a marketing budget throughout the state. You c
 
 It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa. "
 
+To review data, see this spreadsheet: https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true
+
 
 Summary of Analysis:    "1. Reviewed revenue (total sales)
 2. Found top liquor categories and brands, stores and counties by exploring the Sales table using aggregates and CASE statements
