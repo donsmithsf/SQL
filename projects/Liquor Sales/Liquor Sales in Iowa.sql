@@ -57,7 +57,7 @@ GROUP BY "Type of Product Sold"
 ORDER BY "Total Sales" DESC; 
 
 
-SELECT description, category_name, SUM(total) AS ""Total Sales""
+SELECT description, category_name, SUM(total) AS "Total Sales"
 FROM (SELECT description, category_name, total
 	FROM sales
 	WHERE category_name IS NOT NULL) AS l
@@ -90,21 +90,20 @@ ON sales.county = counties.county
 GROUP BY sales.county, counties.population
 ORDER BY "Total Sales" DESC;
 
-Top 10:
+---Top 10:
 
-Polk: $86,397,461.79
-Linn: $34,460,047.49
-Scott: $27,902,848.67
-Johnson: $24,200,402.25
-Black Hawk: $22,967,283.29
-Pottawattamie: $14,177,698.30
-Woodbury: $13,242,016.16
-Story: $12,267,027.18
-Dubuque: $11,879,190.38
-Cerro Gordo: $7,998,958.92
+---Polk: $86,397,461.79
+---Linn: $34,460,047.49
+---Scott: $27,902,848.67
+---Johnson: $24,200,402.25
+---Black Hawk: $22,967,283.29
+---Pottawattamie: $14,177,698.30
+---Woodbury: $13,242,016.16
+---Story: $12,267,027.18
+---Dubuque: $11,879,190.38
+---Cerro Gordo: $7,998,958.92
 
 --For more info, see sheet 7.
-
 
 -------------------------------------------------
 
@@ -216,21 +215,23 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 	GROUP BY category_name, total
 	ORDER BY "Total Sales" DESC) AS l;	
 
-Top 9 best selling categories of alcohol by sales:
+----Top 9 best selling categories of alcohol by sales:
 
-Whiskey/Bourbon: $135,418,097.97 
-Vodka: $92,993,705.16 
-Rum: $53,126,653.19 
-Brandy: $36,497,624.08 
-Gin and other Spirits: $26,264,734.54 
-Tequila: $21,411,263.64 
-Schnapps/Liqueur/Crème de Cacao/Anisette/Triple Sec: $16,110,241.30 
-Cocktails: $6,314,010.87 
-Beer/Ale: $272,284.44
+----Whiskey/Bourbon: $135,418,097.97 
+----Vodka: $92,993,705.16 
+----Rum: $53,126,653.19 
+----Brandy: $36,497,624.08 
+----Gin and other Spirits: $26,264,734.54 
+----Tequila: $21,411,263.64 
+----Schnapps/Liqueur/Crème de Cacao/Anisette/Triple Sec: $16,110,241.30 
+----Cocktails: $6,314,010.87 
+----Beer/Ale: $272,284.44
 
 -------------------------------------------------
 
---Which rum products have sales greater than $10,000? How about whiskey or vodka products? 	"Rum:
+--Which rum products have sales greater than $10,000? How about whiskey or vodka products? 	
+
+---Rum:
 
 SELECT "Type of Rum Products Sold"
 FROM (SELECT category_name AS "Type of Rum Products Sold", total
@@ -240,9 +241,8 @@ FROM (SELECT category_name AS "Type of Rum Products Sold", total
 	ORDER BY total DESC) AS l
 GROUP BY "Type of Rum Products Sold";
 
---------------------------
 
---Whiskey:
+---Whiskey:
 
 SELECT "Type of Whiskey Products Sold"
 FROM (SELECT category_name AS "Type of Whiskey Products Sold", total
@@ -252,9 +252,8 @@ FROM (SELECT category_name AS "Type of Whiskey Products Sold", total
 	ORDER BY total DESC) AS l
 GROUP BY "Type of Whiskey Products Sold";
 
---------------------------
 
---Vodka: 
+---Vodka: 
 
 SELECT "Type of Vodka Products Sold"
 FROM (SELECT category_name AS "Type of Vodka Products Sold", total
@@ -264,19 +263,20 @@ FROM (SELECT category_name AS "Type of Vodka Products Sold", total
 	ORDER BY total DESC) AS l
 GROUP BY "Type of Vodka Products Sold";	
 
-Type of Rum Products Sold:
--FLAVORED RUM
--PUERTO RICO & VIRGIN ISLANDS RUM
--SPICED RUM
+----Type of Rum Products Sold:
+-----FLAVORED RUM
+-----PUERTO RICO & VIRGIN ISLANDS RUM
+-----SPICED RUM
 
-Type of Whiskey Products Sold:
--SINGLE BARREL BOURBON WHISKIES
--STRAIGHT BOURBON WHISKIES
+----Type of Whiskey Products Sold:
+-----SINGLE BARREL BOURBON WHISKIES
+-----STRAIGHT BOURBON WHISKIES
 
-Type of Vodka Products Sold:
--80 PROOF VODKA
--IMPORTED VODKA
--IMPORTED VODKA - MISC
+----Type of Vodka Products Sold:
+-----80 PROOF VODKA
+-----IMPORTED VODKA
+-----IMPORTED VODKA 
+-----MISC
 
 -------------------------------------------------
 
@@ -295,18 +295,18 @@ WHERE month_date = 2 AND year_date = 2014
 GROUP BY county
 ORDER BY "Vodka Sales in February 2014" DESC
 
-Top 10 counties with the highest vodka sales 2/2014
+---Top 10 counties with the highest vodka sales 2/2014
 
-Polk: 699113.42
-Linn: 271014.73
-Scott: 243703.73
-Johnson: 221415
-Black Hawk: 208446.96
-Pottawattamie: 118724.34
-Dubuque: 99071.28
-Story: 96807.7
-Woodbury: 93486.75
-Dallas: 64481.86
+---Polk: 699113.42
+---Linn: 271014.73
+---Scott: 243703.73
+---Johnson: 221415
+---Black Hawk: 208446.96
+---Pottawattamie: 118724.34
+---Dubuque: 99071.28
+---Story: 96807.7
+---Woodbury: 93486.75
+---Dallas: 64481.86
 
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
@@ -314,7 +314,9 @@ Dallas: 64481.86
 
 -------------------------------------------------
 
---What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 	"Sales per item categorized by expensive, medium and cheap:
+--What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
+
+---Sales per item categorized by expensive, medium and cheap:
 
 SELECT category_name, btl_price, bottle_cost, concat(month_date, '/', year_date) AS month_and_year
 
@@ -363,6 +365,7 @@ ORDER BY month_and_date ASC;
 
 --Which stores sell one of the top five most expensive bottles of alcohol? 	
 
+
 ---List of products by bottle price:
 
 SELECT DISTINCT category_name, btl_price
@@ -376,13 +379,13 @@ FROM sales
 WHERE cast(btl_price AS numeric) > 2000
 ORDER BY btl_price DESC;
 
-Top 5 most expensive bottles of alcohol:
+----Top 5 most expensive bottles of alcohol:
 
-SINGLE BARREL BOURBON WHISKIES: $8,700.00 
-DECANTERS & SPECIALTY PACKAGES: $2,398.80 
-IMPORTED GRAPE BRANDIES: $2,098.94 
-SINGLE MALT SCOTCH: $845.10 
-SCOTCH WHISKIES: $747.96 
+----SINGLE BARREL BOURBON WHISKIES: $8,700.00 
+----DECANTERS & SPECIALTY PACKAGES: $2,398.80 
+----IMPORTED GRAPE BRANDIES: $2,098.94 
+----SINGLE MALT SCOTCH: $845.10 
+----SCOTCH WHISKIES: $747.96 
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
@@ -442,18 +445,18 @@ FROM (SELECT *
 GROUP BY store
 ORDER BY "Sales of items over 90 proof" DESC
 
-Top 10 stores with the highest sales of items over 90 proof
+---Top 10 stores with the highest sales of items over 90 proof
 
-2633: 	$689,442.44
-4829: 	$564,993.84
-2512: 	$361,513.53
-3814: 	$334,316.94
-3385: 	$285,790.98
-3420: 	$264,973.86
-3952: 	$209,604.39
-3354: 	$195,723.16
-3773: 	$173,803.96
-2599: 	$170,751.64
+---2633: 	$689,442.44
+---4829: 	$564,993.84
+---2512: 	$361,513.53
+---3814: 	$334,316.94
+---3385: 	$285,790.98
+---3420: 	$264,973.86
+---3952: 	$209,604.39
+---3354: 	$195,723.16
+---3773: 	$173,803.96
+---2599: 	$170,751.64
 
 --See sheet 18 for more information
 
