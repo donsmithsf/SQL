@@ -7,7 +7,7 @@ It will be up to you to decide if the marketing budget should be focused on grow
 To review data, see this spreadsheet: https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true
 
 
-```{sql}
+```sql
 
 --Type of Product Sold and Average Cost per Case    
 
@@ -21,7 +21,7 @@ ORDER BY "Average Cost per Case" DESC;
 
 ```
 
-```{sql}
+```sql
 
 --Total Sales by Store, Vendor and Type of Product  
 
@@ -42,7 +42,7 @@ LIMIT 100;
 
 ```
 
-```{sql}
+```sql
 
 --Summarize the products represented by different types of stores in counties throughout the state. How many total products are in the product table? How about products by vendor or category?
 
@@ -63,7 +63,7 @@ ORDER BY vendor;
 
 ```
 
-```{sql}
+```sql
 
 --Review the Sales table. Which products sell the best? Make sure to decide how “best” will be defined (i.e., total sales, total units sold, market share, etc.).   
 
@@ -100,7 +100,7 @@ ORDER BY "Total Sales" DESC;
 
 ```
 
-```{sql}
+```sql
 
 --Review the Counties table. What areas of the state sell more liquor than others?  
 
@@ -128,7 +128,7 @@ ORDER BY "Total Sales" DESC;
 
 ```
 
-```{sql}
+```sql
 
 --Summarize your exploration of the sales in your presentation. Some sample questions you could answer include:         
 ---What are the top 10 categories of liquor sold based on the total amount of sales revenue?    
@@ -252,7 +252,7 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 
 ```
 
-```{sql}
+```sql
 
 --Which rum products have sales greater than $10,000? How about whiskey or vodka products?  
 
@@ -306,7 +306,7 @@ GROUP BY "Type of Vodka Products Sold";
 
 ```
 
-```{sql}
+```sql
 
 --Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well? (Hint: You can use the date_part function to extract the month and year from the date.) 
 
@@ -343,7 +343,7 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 ```
 
-```{sql}
+```sql
 
 --What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
 
@@ -392,7 +392,7 @@ ORDER BY month_and_date ASC;
 
 ```
 
-```{sql}
+```sql
 
 --Summarize your exploration of stores in your presentation. Some sample questions you could answer include:    
 
@@ -426,7 +426,7 @@ ORDER BY btl_price DESC;
 
 ```
 
-```{sql}
+```sql
 
 --How many stores have more than $2,000,000 in total sales?     
 
@@ -454,7 +454,7 @@ WHERE average_bottle_price > 20
 
 ```
 
-```{sql}
+```sql
 
 --Where are these stores located throughout the state and what does that mean?  
 
@@ -469,7 +469,7 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ```
 
-```{sql}
+```sql
 
 --Which stores have the highest sales of items over 90 proof?   
 
@@ -501,7 +501,7 @@ ORDER BY "Sales of items over 90 proof" DESC
 
 ```
 
-```{sql}
+```sql
 
 --Liquor whose per bottle profit margin is greater than 50% 
 
