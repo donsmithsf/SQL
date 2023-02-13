@@ -48,8 +48,9 @@ ORDER BY vendor;
 
 -------------------------------------------------
 
---Review the Sales table. Which products sell the best? Make sure to decide how “best” will be defined (i.e., total sales, total units sold, market share, etc.). 	"Select ""Type of Product Sold"", sum (total) as ""Total Sales""
+--Review the Sales table. Which products sell the best? Make sure to decide how “best” will be defined (i.e., total sales, total units sold, market share, etc.). 	
 
+SELECT "Type of Product Sold", SUM(total) as "Total Sales"
 FROM (SELECT category_name AS "Type of Product Sold", total
 	FROM sales
 	WHERE category_name IS NOT NULL) AS l
@@ -82,8 +83,9 @@ ORDER BY "Total Sales" DESC;
 
 -------------------------------------------------
 
---Review the Counties table. What areas of the state sell more liquor than others? 	"Select sales.county, counties.population, sum(sales.total) as ""Total Sales""
+--Review the Counties table. What areas of the state sell more liquor than others? 	
 
+SELECT sales.county, counties.population, SUM(sales.total) as "Total Sales"
 FROM sales
 LEFT JOIN counties
 ON sales.county = counties.county
@@ -280,12 +282,13 @@ GROUP BY "Type of Vodka Products Sold";
 
 -------------------------------------------------
 
---Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well? (Hint: You can use the date_part function to extract the month and year from the date.) 	"Select county, sum(total) as ""Vodka Sales in February 2014""
+--Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well? (Hint: You can use the date_part function to extract the month and year from the date.) 
 
+SELECT county, SUM(total) AS "Vodka Sales in February 2014"
 FROM (
 	SELECT county, category_name, total, 
 date_part('month', date) AS month_date, 
-date_part ('year', date) AS year_date
+date_part('year', date) AS year_date
 	FROM sales
 	WHERE category_name IS NOT NULL
 	AND category_name like '%VODKA%'
@@ -322,7 +325,7 @@ SELECT category_name, btl_price, bottle_cost, concat(month_date, '/', year_date)
 
 FROM (
 	SELECT category_name, btl_price, date_part('month', date) AS month_date, 
-date_part ('year', date) AS year_date,
+date_part('year', date) AS year_date,
 
 	CASE
 		WHEN btl_price >= 200 THEN 'expensive'
@@ -332,7 +335,7 @@ date_part ('year', date) AS year_date,
 	
 	FROM (
 		SELECT category_name, cast(btl_price AS numeric), date FROM sales) AS l
-	)AS temp
+	) AS temp
 
 WHERE category_name IS NOT NULL
 GROUP BY category_name, btl_price, bottle_cost, month_date, year_date
@@ -474,7 +477,7 @@ ORDER BY btl_price DESC;
 --Stores with the highest total sales	
 
 SELECT concat(county, ': ', store) AS count_and_store_number, total_sales
-FROM(SELECT DISTINCT store, county, SUM(total) AS total_sales
+FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 	FROM(SELECT store, county, total
 		FROM sales) AS l
 	GROUP BY store, county
