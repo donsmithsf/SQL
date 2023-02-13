@@ -5,7 +5,7 @@ You’ve been hired as an analyst for a consulting company tasked with running a
 
 You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors. 
 
-It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa. "
+It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa.
 
 
 ### Summary of Analysis
@@ -20,6 +20,9 @@ It will be up to you to decide if the marketing budget should be focused on grow
 
 To review data, see this spreadsheet: https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true
 
+### Analysis
+
+##### 1. Determine the types of Products Sold and Average Cost per Case .
 
 ```sql
 
@@ -34,6 +37,8 @@ ORDER BY "Average Cost per Case" DESC;
 --For output, see sheet 3.
 
 ```
+
+[add screenshot of data]
 
 ```sql
 
