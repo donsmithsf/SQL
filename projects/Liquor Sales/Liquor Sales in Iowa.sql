@@ -6,7 +6,7 @@ WHERE category_name IS NOT NULL
 GROUP BY category_name
 ORDER BY "Average Cost per Case" DESC;
 
---See sheet 3.
+--For output, see sheet 3.
 
 -------------------------------------------------
 
@@ -25,7 +25,7 @@ GROUP BY products.vendor_name, products.category_name, sales.total, stores.store
 ORDER BY "Total Sales" DESC
 LIMIT 100;
 
---See sheet 4.
+--For output, see sheet 4.
 
 -------------------------------------------------
 
@@ -44,7 +44,7 @@ GROUP BY category_name, vendor
 ORDER BY vendor;
 
 --There are 68 unique products. 
---See code output in sheet 5.
+--For output, see sheet 5.
 
 -------------------------------------------------
 
@@ -79,7 +79,7 @@ ORDER BY "Total Sales" DESC;
 ---BLENDED WHISKIES: $12,037,250.55
 
 
---For more info, see sheet 6.
+--For output, see sheet 6.
 
 -------------------------------------------------
 
@@ -105,7 +105,7 @@ ORDER BY "Total Sales" DESC;
 ---Dubuque: $11,879,190.38
 ---Cerro Gordo: $7,998,958.92
 
---For more info, see sheet 7.
+--For output, see sheet 7.
 
 -------------------------------------------------
 
@@ -313,7 +313,7 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
---See sheet 11 for more information.
+--For output, see sheet 11.
 
 -------------------------------------------------
 
@@ -360,7 +360,7 @@ GROUP BY month_and_date
 ORDER BY month_and_date ASC;
 
 
---See sheet 12 for more info.
+--For output, see sheet 12.
 
 -------------------------------------------------
 
@@ -392,7 +392,7 @@ ORDER BY btl_price DESC;
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
---From the SQL query in sheet 14, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
+--From the output in sheet 14, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
 -------------------------------------------------
 
@@ -431,7 +431,7 @@ FROM (SELECT store, county, round(AVG(cast(btl_price AS numeric)), 2) AS average
 	ORDER BY average_bottle_price DESC) AS l
 WHERE average_bottle_price > 20 and county IS NOT NULL
 
---See sheet 17 for more info.
+--For output, see sheet 17.
 
 -------------------------------------------------
 
@@ -461,7 +461,7 @@ ORDER BY "Sales of items over 90 proof" DESC
 ---3773: 	$173,803.96
 ---2599: 	$170,751.64
 
---See sheet 18 for more information
+--For output, see sheet 18.
 
 -------------------------------------------------
 
@@ -472,7 +472,7 @@ FROM sales
 WHERE (btl_price - state_btl_cost) >= (btl_price/2) AND category_name NOT LIKE 'DECANTERS & SPECIALTY PACKAGES'
 ORDER BY btl_price DESC;
 
---See sheet 19.
+--For output, see sheet 19.
 
 --Stores with the highest total sales	
 
@@ -483,4 +483,4 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 	GROUP BY store, county
 	ORDER BY total_sales DESC) AS l;
 
---See sheet 20.
+--For output, see sheet 20.
