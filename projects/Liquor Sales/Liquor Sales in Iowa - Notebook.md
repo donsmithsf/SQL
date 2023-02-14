@@ -22,7 +22,7 @@ To review data, see this spreadsheet: https://docs.google.com/spreadsheets/d/10U
 
 ### Analysis
 
-##### 1. Determine the types of Products Sold and Average Cost per Case .
+##### 01. Determine the types of Products Sold and Average Cost per Case.
 
 ```sql
 
@@ -34,9 +34,9 @@ WHERE category_name IS NOT NULL
 GROUP BY category_name
 ORDER BY "Average Cost per Case" DESC;
 
---For output, see sheet 3.
-
 ```
+
+--For output, see sheet 3.
 
 [add screenshot of data]
 
@@ -59,9 +59,10 @@ GROUP BY products.vendor_name, products.category_name, sales.total, stores.store
 ORDER BY "Total Sales" DESC
 LIMIT 100;
 
+```
+
 --For output, see sheet 4.
 
-```
 
 ```sql
 
@@ -79,10 +80,11 @@ WHERE category_name IS NOT NULL and vendor IS NOT NULL
 GROUP BY category_name, vendor
 ORDER BY vendor;
 
---There are 68 unique products. 
---For output, see sheet 5.
 
 ```
+
+--There are 68 unique products. 
+--For output, see sheet 5.
 
 ```sql
 
@@ -103,6 +105,9 @@ FROM (SELECT description, category_name, total
 GROUP BY description, category_name
 ORDER BY "Total Sales" DESC;    
 
+
+```
+
 ---Top 10:
 
 ---CANADIAN WHISKIES: $48,053,061.91
@@ -119,8 +124,6 @@ ORDER BY "Total Sales" DESC;
 
 --For output, see sheet 6.
 
-```
-
 ```sql
 
 --Review the Counties table. What areas of the state sell more liquor than others?  
@@ -131,6 +134,9 @@ LEFT JOIN counties
 ON sales.county = counties.county
 GROUP BY sales.county, counties.population
 ORDER BY "Total Sales" DESC;
+
+
+```
 
 ---Top 10:
 
@@ -146,8 +152,6 @@ ORDER BY "Total Sales" DESC;
 ---Cerro Gordo: $7,998,958.92
 
 --For output, see sheet 7.
-
-```
 
 ```sql
 
@@ -259,6 +263,9 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
     GROUP BY category_name, total
     ORDER BY "Total Sales" DESC) AS l;  
 
+
+```
+
 ----Top 9 best selling categories of alcohol by sales:
 
 ----Whiskey/Bourbon: $135,418,097.97 
@@ -271,7 +278,7 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 ----Cocktails: $6,314,010.87 
 ----Beer/Ale: $272,284.44
 
-```
+sheet 9
 
 ```sql
 
@@ -309,6 +316,8 @@ FROM (SELECT category_name AS "Type of Vodka Products Sold", total
     ORDER BY total DESC) AS l
 GROUP BY "Type of Vodka Products Sold"; 
 
+
+```
 ----Type of Rum Products Sold:
 -----FLAVORED RUM
 -----PUERTO RICO & VIRGIN ISLANDS RUM
@@ -324,8 +333,7 @@ GROUP BY "Type of Vodka Products Sold";
 -----IMPORTED VODKA 
 -----MISC
 
-
-```
+sheet 10
 
 ```sql
 
@@ -345,6 +353,9 @@ WHERE month_date = 2 AND year_date = 2014
 GROUP BY county
 ORDER BY "Vodka Sales in February 2014" DESC
 
+
+```
+
 ---Top 10 counties with the highest vodka sales 2/2014
 
 ---Polk: 699113.42
@@ -361,8 +372,6 @@ ORDER BY "Vodka Sales in February 2014" DESC
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
 --For output, see sheet 11.
-
-```
 
 ```sql
 
@@ -409,9 +418,9 @@ GROUP BY month_and_date
 ORDER BY month_and_date ASC;
 
 
---For output, see sheet 12.
-
 ```
+
+--For output, see sheet 12.
 
 ```sql
 
@@ -433,6 +442,9 @@ FROM sales
 WHERE cast(btl_price AS numeric) > 2000
 ORDER BY btl_price DESC;
 
+
+```
+
 ----Top 5 most expensive bottles of alcohol:
 
 ----SINGLE BARREL BOURBON WHISKIES: $8,700.00 
@@ -444,8 +456,6 @@ ORDER BY btl_price DESC;
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
 --From the output in sheet 14, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
-
-```
 
 ```sql
 
@@ -460,7 +470,11 @@ WHERE total_sales > 2000000
 
 --Twenty-four stores have sales greater than two million.
 
--------------------------------------------------
+```
+sheet 20
+
+```sql
+
 
 --How many stores have an average bottle price greater than $20?    
 
@@ -475,6 +489,8 @@ WHERE average_bottle_price > 20
 
 ```
 
+sheet 17
+
 ```sql
 
 --Where are these stores located throughout the state and what does that mean?  
@@ -486,9 +502,10 @@ FROM (SELECT store, county, round(AVG(cast(btl_price AS numeric)), 2) AS average
     ORDER BY average_bottle_price DESC) AS l
 WHERE average_bottle_price > 20 and county IS NOT NULL
 
---For output, see sheet 17.
 
 ```
+
+--For output, see sheet 17.
 
 ```sql
 
@@ -505,6 +522,10 @@ FROM (SELECT *
 GROUP BY store
 ORDER BY "Sales of items over 90 proof" DESC
 
+
+
+```
+
 ---Top 10 stores with the highest sales of items over 90 proof
 
 ---2633:    $689,442.44
@@ -520,8 +541,6 @@ ORDER BY "Sales of items over 90 proof" DESC
 
 --For output, see sheet 18.
 
-```
-
 ```sql
 
 --Liquor whose per bottle profit margin is greater than 50% 
@@ -531,7 +550,11 @@ FROM sales
 WHERE (btl_price - state_btl_cost) >= (btl_price/2) AND category_name NOT LIKE 'DECANTERS & SPECIALTY PACKAGES'
 ORDER BY btl_price DESC;
 
+```
+
 --For output, see sheet 19.
+
+```sql
 
 --Stores with the highest total sales   
 
@@ -542,10 +565,11 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
     GROUP BY store, county
     ORDER BY total_sales DESC) AS l;
 
---For output, see sheet 20.
+
 
 ```
 
+--For output, see sheet 20.
 
 ### Conclusions
 

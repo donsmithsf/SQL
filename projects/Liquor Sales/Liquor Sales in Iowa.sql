@@ -1,3 +1,5 @@
+--To review outputs, see this spreadsheet: https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true
+
 --Type of Product Sold and Average Cost per Case	
 
 SELECT DISTINCT category_name AS "Type of Product Sold", round((AVG(case_cost)), 2) AS "Average Cost per Case"
@@ -6,7 +8,7 @@ WHERE category_name IS NOT NULL
 GROUP BY category_name
 ORDER BY "Average Cost per Case" DESC;
 
---For output, see sheet 3.
+--For output, see sheet 01.
 
 -------------------------------------------------
 
@@ -25,11 +27,14 @@ GROUP BY products.vendor_name, products.category_name, sales.total, stores.store
 ORDER BY "Total Sales" DESC
 LIMIT 100;
 
---For output, see sheet 4.
+--For output, see sheet 02.
 
 -------------------------------------------------
 
---Summarize the products represented by different types of stores in counties throughout the state. How many total products are in the product table? How about products by vendor or category?
+--Will summarize the products represented by different types of stores in counties throughout the state. 
+--Questions
+---How many total products are in the product table? 
+---How about products by vendor or category?
 
 SELECT DISTINCT category_name, COUNT(category_name)
 FROM sales
@@ -44,11 +49,13 @@ GROUP BY category_name, vendor
 ORDER BY vendor;
 
 --There are 68 unique products. 
---For output, see sheet 5.
+--For output, see sheet 03.
 
 -------------------------------------------------
 
---Review the Sales table. Which products sell the best? Make sure to decide how “best” will be defined (i.e., total sales, total units sold, market share, etc.). 	
+--Will review and evaluate the Sales table. 
+---Which products sell the best? 
+
 
 SELECT "Type of Product Sold", SUM(total) as "Total Sales"
 FROM (SELECT category_name AS "Type of Product Sold", total
@@ -79,11 +86,12 @@ ORDER BY "Total Sales" DESC;
 ---BLENDED WHISKIES: $12,037,250.55
 
 
---For output, see sheet 6.
+--For output, see sheet 04.
 
 -------------------------------------------------
 
---Review the Counties table. What areas of the state sell more liquor than others? 	
+--Joining Sales tablw with the Counties table. 
+---What areas of the state sell more liquor than others? 	
 
 SELECT sales.county, counties.population, SUM(sales.total) as "Total Sales"
 FROM sales
@@ -105,11 +113,11 @@ ORDER BY "Total Sales" DESC;
 ---Dubuque: $11,879,190.38
 ---Cerro Gordo: $7,998,958.92
 
---For output, see sheet 7.
+--For output, see sheet 05.
 
 -------------------------------------------------
 
---Summarize your exploration of the sales in your presentation. Some sample questions you could answer include: 		
+--Exploring sales data 		
 ---What are the top 10 categories of liquor sold based on the total amount of sales revenue? 	
 
 ---Total Sales by Type of Product:
@@ -229,9 +237,11 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 ----Cocktails: $6,314,010.87 
 ----Beer/Ale: $272,284.44
 
+--For output, see sheet 06.
+
 -------------------------------------------------
 
---Which rum products have sales greater than $10,000? How about whiskey or vodka products? 	
+--Will determine which rum, whiskey and vodka products have sales greater than $10,000?
 
 ---Rum:
 
@@ -280,9 +290,11 @@ GROUP BY "Type of Vodka Products Sold";
 -----IMPORTED VODKA 
 -----MISC
 
+--For output, see sheet 07.
+
 -------------------------------------------------
 
---Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well? (Hint: You can use the date_part function to extract the month and year from the date.) 
+--Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well?
 
 SELECT county, SUM(total) AS "Vodka Sales in February 2014"
 FROM (
@@ -313,11 +325,11 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
---For output, see sheet 11.
+--For output, see sheet 08.
 
 -------------------------------------------------
 
---What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
+--What is the trend of sales by month? 
 
 ---Sales per item categorized by expensive, medium and cheap:
 
@@ -360,14 +372,11 @@ GROUP BY month_and_date
 ORDER BY month_and_date ASC;
 
 
---For output, see sheet 12.
+--For output, see sheet 09.
 
--------------------------------------------------
-
---Summarize your exploration of stores in your presentation. Some sample questions you could answer include: 	
+-------------------------------------------------	
 
 --Which stores sell one of the top five most expensive bottles of alcohol? 	
-
 
 ---List of products by bottle price:
 
@@ -392,7 +401,7 @@ ORDER BY btl_price DESC;
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
---From the output in sheet 14, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
+--From the output in sheet 10, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
 -------------------------------------------------
 
@@ -407,6 +416,8 @@ WHERE total_sales > 2000000
 
 --Twenty-four stores have sales greater than two million.
 
+--For output, see sheet 14.
+
 -------------------------------------------------
 
 --How many stores have an average bottle price greater than $20? 	
@@ -420,6 +431,8 @@ WHERE average_bottle_price > 20
 
 --Twenty-two stores have an average bottle price greater than $20.
 
+--For output, see sheet 11.
+
 -------------------------------------------------
 
 --Where are these stores located throughout the state and what does that mean? 	
@@ -431,7 +444,7 @@ FROM (SELECT store, county, round(AVG(cast(btl_price AS numeric)), 2) AS average
 	ORDER BY average_bottle_price DESC) AS l
 WHERE average_bottle_price > 20 and county IS NOT NULL
 
---For output, see sheet 17.
+--For output, see sheet 11.
 
 -------------------------------------------------
 
@@ -448,7 +461,7 @@ FROM (SELECT *
 GROUP BY store
 ORDER BY "Sales of items over 90 proof" DESC
 
----Top 10 stores with the highest sales of items over 90 proof
+---Top 10 stores with the highest sales of items over 90 proof:
 
 ---2633: 	$689,442.44
 ---4829: 	$564,993.84
@@ -461,20 +474,22 @@ ORDER BY "Sales of items over 90 proof" DESC
 ---3773: 	$173,803.96
 ---2599: 	$170,751.64
 
---For output, see sheet 18.
+--For output, see sheet 12.
 
 -------------------------------------------------
 
---Liquor whose per bottle profit margin is greater than 50%	
+--Liquor whose per bottle profit margin is greater than 50%:
 
 SELECT DISTINCT category_name, description, vendor, btl_price, state_btl_cost, liter_size
 FROM sales
 WHERE (btl_price - state_btl_cost) >= (btl_price/2) AND category_name NOT LIKE 'DECANTERS & SPECIALTY PACKAGES'
 ORDER BY btl_price DESC;
 
---For output, see sheet 19.
+--For output, see sheet 13.
 
---Stores with the highest total sales	
+-------------------------------------------------
+
+--Stores with the highest total sales:
 
 SELECT concat(county, ': ', store) AS count_and_store_number, total_sales
 FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
@@ -483,4 +498,4 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 	GROUP BY store, county
 	ORDER BY total_sales DESC) AS l;
 
---For output, see sheet 20.
+--For output, see sheet 14.
