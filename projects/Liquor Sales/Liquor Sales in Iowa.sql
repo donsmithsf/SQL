@@ -241,7 +241,7 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 
 -------------------------------------------------
 
---Will determine which rum, whiskey and vodka products have sales greater than $10,000?
+--Which rum, whiskey and vodka products have sales greater than $10,000?
 
 ---Rum:
 
