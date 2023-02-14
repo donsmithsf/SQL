@@ -36,7 +36,7 @@ ORDER BY "Average Cost per Case" DESC;
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/01.JPG "Title")
 
 --For output, see sheet 01.
 
