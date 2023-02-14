@@ -36,11 +36,10 @@ ORDER BY "Average Cost per Case" DESC;
 
 ```
 
---For output, see sheet 3.
-
-[add screenshot of data]
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 01.
+
 
 ```sql
 
@@ -61,18 +60,33 @@ LIMIT 100;
 
 ```
 
---For output, see sheet 4.
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 02.
+
 
 
 ```sql
 
---Summarize the products represented by different types of stores in counties throughout the state. How many total products are in the product table? How about products by vendor or category?
+--Summarize the products represented by different types of stores in counties throughout the state. How many total products are in the product table?
 
 SELECT DISTINCT category_name, COUNT(category_name)
 FROM sales
 WHERE category_name IS NOT NULL
 GROUP BY category_name; 
 
+```
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--There are 68 unique products. 
+--For output, see sheet 03.
+
+2nd screenshot
+
+```sql
+
+--How about products by vendor or category?
 
 SELECT DISTINCT vendor, category_name, COUNT(category_name) AS "Number of item"
 FROM sales
@@ -83,12 +97,16 @@ ORDER BY vendor;
 
 ```
 
---There are 68 unique products. 
---For output, see sheet 5.
+1st screenshot
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 03.
+
 
 ```sql
 
---Review the Sales table. Which products sell the best? Make sure to decide how “best” will be defined (i.e., total sales, total units sold, market share, etc.).   
+--Review the Sales table. Which products sell the best?   
 
 SELECT "Type of Product Sold", SUM(total) as "Total Sales"
 FROM (SELECT category_name AS "Type of Product Sold", total
@@ -97,16 +115,12 @@ FROM (SELECT category_name AS "Type of Product Sold", total
 GROUP BY "Type of Product Sold"
 ORDER BY "Total Sales" DESC; 
 
-
-SELECT description, category_name, SUM(total) AS "Total Sales"
-FROM (SELECT description, category_name, total
-    FROM sales
-    WHERE category_name IS NOT NULL) AS l
-GROUP BY description, category_name
-ORDER BY "Total Sales" DESC;    
-
-
 ```
+
+1st screenshot and graph
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
 
 ---Top 10:
 
@@ -122,7 +136,27 @@ ORDER BY "Total Sales" DESC;
 ---BLENDED WHISKIES: $12,037,250.55
 
 
---For output, see sheet 6.
+--For output, see sheet 04.
+
+```sql
+
+SELECT description, category_name, SUM(total) AS "Total Sales"
+FROM (SELECT description, category_name, total
+    FROM sales
+    WHERE category_name IS NOT NULL) AS l
+GROUP BY description, category_name
+ORDER BY "Total Sales" DESC;    
+
+
+```
+
+2nd screenshot and graph
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+
+--For output, see sheet 04.
 
 ```sql
 
@@ -138,6 +172,14 @@ ORDER BY "Total Sales" DESC;
 
 ```
 
+data, and 2 graphs
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
 ---Top 10:
 
 ---Polk: $86,397,461.79
@@ -151,7 +193,7 @@ ORDER BY "Total Sales" DESC;
 ---Dubuque: $11,879,190.38
 ---Cerro Gordo: $7,998,958.92
 
---For output, see sheet 7.
+--For output, see sheet 05.
 
 ```sql
 
@@ -266,6 +308,14 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 
 ```
 
+data, and 2 graphs
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
 ----Top 9 best selling categories of alcohol by sales:
 
 ----Whiskey/Bourbon: $135,418,097.97 
@@ -278,12 +328,11 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 ----Cocktails: $6,314,010.87 
 ----Beer/Ale: $272,284.44
 
-sheet 9
+--For output, see sheet 06.
+
+## --Which rum, whiskey and vodka products have sales greater than $10,000?
 
 ```sql
-
---Which rum products have sales greater than $10,000? How about whiskey or vodka products?  
-
 ---Rum:
 
 SELECT "Type of Rum Products Sold"
@@ -293,6 +342,19 @@ FROM (SELECT category_name AS "Type of Rum Products Sold", total
     GROUP BY ""Type of Rum Products Sold"", total
     ORDER BY total DESC) AS l
 GROUP BY "Type of Rum Products Sold";
+
+```
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+----Type of Rum Products Sold:
+-----FLAVORED RUM
+-----PUERTO RICO & VIRGIN ISLANDS RUM
+-----SPICED RUM
+
+--For output, see sheet 07.
+
+```sql
 
 
 ---Whiskey:
@@ -304,6 +366,18 @@ FROM (SELECT category_name AS "Type of Whiskey Products Sold", total
     GROUP BY "Type of Whiskey Products Sold", total
     ORDER BY total DESC) AS l
 GROUP BY "Type of Whiskey Products Sold";
+
+```
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+----Type of Whiskey Products Sold:
+-----SINGLE BARREL BOURBON WHISKIES
+-----STRAIGHT BOURBON WHISKIES
+
+--For output, see sheet 07.
+
+```sql
 
 
 ---Vodka: 
@@ -318,14 +392,8 @@ GROUP BY "Type of Vodka Products Sold";
 
 
 ```
-----Type of Rum Products Sold:
------FLAVORED RUM
------PUERTO RICO & VIRGIN ISLANDS RUM
------SPICED RUM
 
-----Type of Whiskey Products Sold:
------SINGLE BARREL BOURBON WHISKIES
------STRAIGHT BOURBON WHISKIES
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
 
 ----Type of Vodka Products Sold:
 -----80 PROOF VODKA
@@ -333,7 +401,7 @@ GROUP BY "Type of Vodka Products Sold";
 -----IMPORTED VODKA 
 -----MISC
 
-sheet 10
+--For output, see sheet 07.
 
 ```sql
 
@@ -356,6 +424,12 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 ```
 
+data and graph
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
 ---Top 10 counties with the highest vodka sales 2/2014
 
 ---Polk: 699113.42
@@ -371,11 +445,12 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
---For output, see sheet 11.
+--For output, see sheet 08.
+
+
+## What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
 
 ```sql
-
---What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
 
 ---Sales per item categorized by expensive, medium and cheap:
 
@@ -400,6 +475,14 @@ GROUP BY category_name, btl_price, bottle_cost, month_date, year_date
 ORDER BY btl_price DESC;
 
 
+```
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 09.
+
+```sql
+
 ---Total sales per month:
 
 SELECT CONCAT(
@@ -408,6 +491,16 @@ FROM sales
 GROUP BY month_and_date
 ORDER BY month_and_date ASC;
 
+```
+
+data and graph
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 09.
+
+```sql
 
 ---Total bottles sold per month:
 
@@ -420,7 +513,12 @@ ORDER BY month_and_date ASC;
 
 ```
 
---For output, see sheet 12.
+data and graph
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 09.
 
 ```sql
 
@@ -435,6 +533,15 @@ SELECT DISTINCT category_name, btl_price
 FROM sales
 ORDER BY btl_price DESC;
 
+```
+
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 10.
+
+```sql
+
 ---Stores that sell bottles of alcohol priced at over $2000:
 
 SELECT category_name, store, btl_price
@@ -444,6 +551,8 @@ ORDER BY btl_price DESC;
 
 
 ```
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
 
 ----Top 5 most expensive bottles of alcohol:
 
@@ -455,7 +564,7 @@ ORDER BY btl_price DESC;
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
---From the output in sheet 14, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
+--From the output in sheet 10, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
 ```sql
 
@@ -471,7 +580,10 @@ WHERE total_sales > 2000000
 --Twenty-four stores have sales greater than two million.
 
 ```
-sheet 20
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 14.
 
 ```sql
 
@@ -489,7 +601,9 @@ WHERE average_bottle_price > 20
 
 ```
 
-sheet 17
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 11.
 
 ```sql
 
@@ -505,7 +619,9 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ```
 
---For output, see sheet 17.
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 11.
 
 ```sql
 
@@ -526,6 +642,8 @@ ORDER BY "Sales of items over 90 proof" DESC
 
 ```
 
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
 ---Top 10 stores with the highest sales of items over 90 proof
 
 ---2633:    $689,442.44
@@ -539,7 +657,7 @@ ORDER BY "Sales of items over 90 proof" DESC
 ---3773:    $173,803.96
 ---2599:    $170,751.64
 
---For output, see sheet 18.
+--For output, see sheet 12.
 
 ```sql
 
@@ -551,8 +669,12 @@ WHERE (btl_price - state_btl_cost) >= (btl_price/2) AND category_name NOT LIKE '
 ORDER BY btl_price DESC;
 
 ```
+data and graph
 
---For output, see sheet 19.
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 13.
 
 ```sql
 
@@ -569,7 +691,12 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 
 ```
 
---For output, see sheet 20.
+data and graph 
+
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
+--For output, see sheet 14.
 
 ### Conclusions
 
