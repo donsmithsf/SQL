@@ -60,7 +60,7 @@ LIMIT 100;
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/02.JPG "Title")
 
 --For output, see sheet 02.
 
@@ -77,7 +77,7 @@ GROUP BY category_name;
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-2.JPG "Title")
 
 --There are 68 unique products. 
 --For output, see sheet 03.
@@ -99,7 +99,7 @@ ORDER BY vendor;
 
 1st screenshot
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-1.JPG "Title")
 
 --For output, see sheet 03.
 
@@ -119,8 +119,8 @@ ORDER BY "Total Sales" DESC;
 
 1st screenshot and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1-graph.JPG "Title")
 
 ---Top 10:
 
@@ -152,8 +152,8 @@ ORDER BY "Total Sales" DESC;
 
 2nd screenshot and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2-graph.JPG "Title")
 
 
 --For output, see sheet 04.
@@ -174,11 +174,11 @@ ORDER BY "Total Sales" DESC;
 
 data, and 2 graphs
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1.JPG "Title")
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-1.JPG "Title")
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-2.JPG "Title")
 
 ---Top 10:
 
@@ -310,11 +310,11 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 
 data, and 2 graphs
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1.JPG "Title")
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1-graph-1.JPG "Title")
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1-graph-2.JPG "Title")
 
 ----Top 9 best selling categories of alcohol by sales:
 
@@ -345,7 +345,7 @@ GROUP BY "Type of Rum Products Sold";
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-1.JPG "Title")
 
 ----Type of Rum Products Sold:
 -----FLAVORED RUM
@@ -369,7 +369,7 @@ GROUP BY "Type of Whiskey Products Sold";
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-2.JPG "Title")
 
 ----Type of Whiskey Products Sold:
 -----SINGLE BARREL BOURBON WHISKIES
@@ -393,7 +393,7 @@ GROUP BY "Type of Vodka Products Sold";
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-3.JPG "Title")
 
 ----Type of Vodka Products Sold:
 -----80 PROOF VODKA
@@ -426,9 +426,9 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 data and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/08-1.JPG "Title")
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/08-1-graph.JPG "Title")
 
 ---Top 10 counties with the highest vodka sales 2/2014
 
@@ -477,7 +477,7 @@ ORDER BY btl_price DESC;
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-1.JPG "Title")
 
 --For output, see sheet 09.
 
@@ -495,8 +495,8 @@ ORDER BY month_and_date ASC;
 
 data and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2-graph.JPG "Title")
 
 --For output, see sheet 09.
 
@@ -515,8 +515,8 @@ ORDER BY month_and_date ASC;
 
 data and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3-graph.JPG "Title")
 
 --For output, see sheet 09.
 
@@ -536,7 +536,7 @@ ORDER BY btl_price DESC;
 ```
 
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-1.JPG "Title")
 
 --For output, see sheet 10.
 
@@ -552,7 +552,7 @@ ORDER BY btl_price DESC;
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-2.JPG "Title")
 
 ----Top 5 most expensive bottles of alcohol:
 
@@ -581,7 +581,7 @@ WHERE total_sales > 2000000
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
 
 --For output, see sheet 14.
 
@@ -601,7 +601,7 @@ WHERE average_bottle_price > 20
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
 
 --For output, see sheet 11.
 
@@ -619,7 +619,7 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-2.JPG "Title")
 
 --For output, see sheet 11.
 
@@ -642,7 +642,7 @@ ORDER BY "Sales of items over 90 proof" DESC
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/12-1.JPG "Title")
 
 ---Top 10 stores with the highest sales of items over 90 proof
 
@@ -671,8 +671,8 @@ ORDER BY btl_price DESC;
 ```
 data and graph
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1-graph.JPG "Title")
 
 --For output, see sheet 13.
 
@@ -693,8 +693,8 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 
 data and graph 
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1-graph.JPG "Title")
 
 --For output, see sheet 14.
 
