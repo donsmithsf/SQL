@@ -40,6 +40,8 @@ ORDER BY "Average Cost per Case" DESC;
 
 [add screenshot of data]
 
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/Capture.JPG?raw=true "Title")
+
 ```sql
 
 --Total Sales by Store, Vendor and Type of Product  
