@@ -128,19 +128,6 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1-graph.JPG "Title")
 
----Top 10:
-
----CANADIAN WHISKIES: $48,053,061.91
----80 PROOF VODKA: $48,045,532.51
----SPICED RUM: $31,600,618.50
----IMPORTED VODKA: $23,879,524.63
----TEQUILA: $21,411,263.64
----STRAIGHT BOURBON WHISKIES: $20,924,480.19
----WHISKEY LIQUEUR: $19,339,201.42
----TENNESSEE WHISKIES: $17,647,970.35
----PUERTO RICO & VIRGIN ISLANDS RUM: $12,729,072.76
----BLENDED WHISKIES: $12,037,250.55
-
 
 --For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
@@ -189,18 +176,6 @@ data, and 2 graphs
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-2.JPG "Title")
 
----Top 10:
-
----Polk: $86,397,461.79
----Linn: $34,460,047.49
----Scott: $27,902,848.67
----Johnson: $24,200,402.25
----Black Hawk: $22,967,283.29
----Pottawattamie: $14,177,698.30
----Woodbury: $13,242,016.16
----Story: $12,267,027.18
----Dubuque: $11,879,190.38
----Cerro Gordo: $7,998,958.92
 
 --For output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
 
@@ -325,17 +300,6 @@ data, and 2 graphs
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1-graph-2.JPG "Title")
 
-----Top 9 best selling categories of alcohol by sales:
-
-----Whiskey/Bourbon: $135,418,097.97 
-----Vodka: $92,993,705.16 
-----Rum: $53,126,653.19 
-----Brandy: $36,497,624.08 
-----Gin and other Spirits: $26,264,734.54 
-----Tequila: $21,411,263.64 
-----Schnapps/Liqueur/Crème de Cacao/Anisette/Triple Sec: $16,110,241.30 
-----Cocktails: $6,314,010.87 
-----Beer/Ale: $272,284.44
 
 --For output, see [sheet 06](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=300400124).
 
@@ -356,10 +320,6 @@ GROUP BY "Type of Rum Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-1.JPG "Title")
 
-----Type of Rum Products Sold:
------FLAVORED RUM
------PUERTO RICO & VIRGIN ISLANDS RUM
------SPICED RUM
 
 --For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
@@ -379,9 +339,6 @@ GROUP BY "Type of Whiskey Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-2.JPG "Title")
 
-----Type of Whiskey Products Sold:
------SINGLE BARREL BOURBON WHISKIES
------STRAIGHT BOURBON WHISKIES
 
 --For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
@@ -407,11 +364,6 @@ GROUP BY "Type of Vodka Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-3.JPG "Title")
 
-----Type of Vodka Products Sold:
------80 PROOF VODKA
------IMPORTED VODKA
------IMPORTED VODKA 
------MISC
 
 --For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
@@ -571,13 +523,6 @@ ORDER BY btl_price DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-2.JPG "Title")
 
-----Top 5 most expensive bottles of alcohol:
-
-----SINGLE BARREL BOURBON WHISKIES: $8,700.00 
-----DECANTERS & SPECIALTY PACKAGES: $2,398.80 
-----IMPORTED GRAPE BRANDIES: $2,098.94 
-----SINGLE MALT SCOTCH: $845.10 
-----SCOTCH WHISKIES: $747.96 
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
@@ -662,18 +607,6 @@ ORDER BY "Sales of items over 90 proof" DESC
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/12-1.JPG "Title")
 
----Top 10 stores with the highest sales of items over 90 proof
-
----2633:    $689,442.44
----4829:    $564,993.84
----2512:    $361,513.53
----3814:    $334,316.94
----3385:    $285,790.98
----3420:    $264,973.86
----3952:    $209,604.39
----3354:    $195,723.16
----3773:    $173,803.96
----2599:    $170,751.64
 
 --For output, see [sheet 12](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=2013826773).
 
