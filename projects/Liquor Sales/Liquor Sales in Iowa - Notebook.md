@@ -64,7 +64,10 @@ LIMIT 100;
 
 --For output, see sheet 02.
 
-
+--Will summarize the products represented by different types of stores in counties throughout the state. 
+--Questions
+---How many total products are in the product table? 
+---How about products by vendor or category?
 
 ```sql
 
@@ -104,6 +107,9 @@ ORDER BY vendor;
 --For output, see sheet 03.
 
 
+--Will review and evaluate the Sales table. 
+---Which products sell the best? 
+
 ```sql
 
 --Review the Sales table. Which products sell the best?   
@@ -137,6 +143,9 @@ ORDER BY "Total Sales" DESC;
 
 
 --For output, see sheet 04.
+
+--Joining Sales tablw with the Counties table. 
+---What areas of the state sell more liquor than others? 
 
 ```sql
 
@@ -195,11 +204,11 @@ data, and 2 graphs
 
 --For output, see sheet 05.
 
+
+--Exploring sales data 		
+---What are the top 10 categories of liquor sold based on the total amount of sales revenue? 	
+
 ```sql
-
---Summarize your exploration of the sales in your presentation. Some sample questions you could answer include:         
----What are the top 10 categories of liquor sold based on the total amount of sales revenue?    
-
 ---Total Sales by Type of Product:
 
 SELECT "Type of Product Sold", SUM(total) AS "Total Sales"
@@ -330,7 +339,7 @@ data, and 2 graphs
 
 --For output, see sheet 06.
 
-## --Which rum, whiskey and vodka products have sales greater than $10,000?
+## Which rum, whiskey and vodka products have sales greater than $10,000?
 
 ```sql
 ---Rum:
@@ -356,7 +365,6 @@ GROUP BY "Type of Rum Products Sold";
 
 ```sql
 
-
 ---Whiskey:
 
 SELECT "Type of Whiskey Products Sold"
@@ -376,6 +384,10 @@ GROUP BY "Type of Whiskey Products Sold";
 -----STRAIGHT BOURBON WHISKIES
 
 --For output, see sheet 07.
+
+
+
+--Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well?
 
 ```sql
 
@@ -403,9 +415,14 @@ GROUP BY "Type of Vodka Products Sold";
 
 --For output, see sheet 07.
 
+
+--What is the trend of sales by month? 
+
+---Sales per item categorized by expensive, medium and cheap:
+
 ```sql
 
---Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well? (Hint: You can use the date_part function to extract the month and year from the date.) 
+--Which county sold the most amount of vodka during February 2014? 
 
 SELECT county, SUM(total) AS "Vodka Sales in February 2014"
 FROM (
@@ -448,7 +465,7 @@ data and graph
 --For output, see sheet 08.
 
 
-## What is the trend of sales by month? Break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
+## What is the trend of sales by month? Will break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
 
 ```sql
 
@@ -566,6 +583,8 @@ ORDER BY btl_price DESC;
 
 --From the output in sheet 10, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
+
+--How many stores have more than $2,000,000 in total sales?
 ```sql
 
 --How many stores have more than $2,000,000 in total sales?     
