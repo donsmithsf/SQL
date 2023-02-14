@@ -18,7 +18,7 @@ It will be up to you to decide if the marketing budget should be focused on grow
 6. Used SQL functions learned in Unit 2 to clean, catalog, organize and export my data for further analysis in Excel
 7. Used Excel to analyze and visualize my data
 
-To review data, see this spreadsheet: https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true
+To review data, see this spreadsheet: [Liquor Sales in Iowa - Data and Analysis](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true)
 
 ### Analysis
 
@@ -38,7 +38,7 @@ ORDER BY "Average Cost per Case" DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/01.JPG "Title")
 
---For output, see sheet 01.
+--For output, see [sheet 01](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=14798079).
 
 
 ```sql
@@ -62,7 +62,7 @@ LIMIT 100;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/02.JPG "Title")
 
---For output, see sheet 02.
+--For output, see [sheet 02](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=654930356).
 
 --Will summarize the products represented by different types of stores in counties throughout the state. 
 --Questions
@@ -83,7 +83,7 @@ GROUP BY category_name;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-2.JPG "Title")
 
 --There are 68 unique products. 
---For output, see sheet 03.
+--For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
 2nd screenshot
 
@@ -104,7 +104,7 @@ ORDER BY vendor;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-1.JPG "Title")
 
---For output, see sheet 03.
+--For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
 
 --Will review and evaluate the Sales table. 
@@ -142,7 +142,7 @@ ORDER BY "Total Sales" DESC;
 ---BLENDED WHISKIES: $12,037,250.55
 
 
---For output, see sheet 04.
+--For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
 --Joining Sales tablw with the Counties table. 
 ---What areas of the state sell more liquor than others? 
@@ -165,7 +165,7 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2-graph.JPG "Title")
 
 
---For output, see sheet 04.
+--For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
 ```sql
 
@@ -202,7 +202,7 @@ data, and 2 graphs
 ---Dubuque: $11,879,190.38
 ---Cerro Gordo: $7,998,958.92
 
---For output, see sheet 05.
+--For output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
 
 
 --Exploring sales data 		
@@ -337,7 +337,7 @@ data, and 2 graphs
 ----Cocktails: $6,314,010.87 
 ----Beer/Ale: $272,284.44
 
---For output, see sheet 06.
+--For output, see [sheet 06](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=300400124).
 
 ## Which rum, whiskey and vodka products have sales greater than $10,000?
 
@@ -361,7 +361,7 @@ GROUP BY "Type of Rum Products Sold";
 -----PUERTO RICO & VIRGIN ISLANDS RUM
 -----SPICED RUM
 
---For output, see sheet 07.
+--For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
 ```sql
 
@@ -383,7 +383,7 @@ GROUP BY "Type of Whiskey Products Sold";
 -----SINGLE BARREL BOURBON WHISKIES
 -----STRAIGHT BOURBON WHISKIES
 
---For output, see sheet 07.
+--For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
 
 
@@ -413,7 +413,7 @@ GROUP BY "Type of Vodka Products Sold";
 -----IMPORTED VODKA 
 -----MISC
 
---For output, see sheet 07.
+--For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
 
 --What is the trend of sales by month? 
@@ -462,7 +462,7 @@ data and graph
 
 --The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
---For output, see sheet 08.
+--For output, see [sheet 08](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=354736027).
 
 
 ## What is the trend of sales by month? Will break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
@@ -496,7 +496,7 @@ ORDER BY btl_price DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-1.JPG "Title")
 
---For output, see sheet 09.
+--For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 ```sql
 
@@ -515,7 +515,7 @@ data and graph
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2-graph.JPG "Title")
 
---For output, see sheet 09.
+--For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 ```sql
 
@@ -535,7 +535,7 @@ data and graph
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3-graph.JPG "Title")
 
---For output, see sheet 09.
+--For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 ```sql
 
@@ -555,7 +555,7 @@ ORDER BY btl_price DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-1.JPG "Title")
 
---For output, see sheet 10.
+--For output, see [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480).
 
 ```sql
 
@@ -581,8 +581,7 @@ ORDER BY btl_price DESC;
 
 --The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
---From the output in sheet 10, we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
-
+--From the output in [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480), we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
 --How many stores have more than $2,000,000 in total sales?
 ```sql
@@ -602,7 +601,7 @@ WHERE total_sales > 2000000
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
 
---For output, see sheet 14.
+--For output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
 ```sql
 
@@ -622,7 +621,7 @@ WHERE average_bottle_price > 20
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
 
---For output, see sheet 11.
+--For output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
 
 ```sql
 
@@ -640,7 +639,7 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-2.JPG "Title")
 
---For output, see sheet 11.
+--For output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
 
 ```sql
 
@@ -676,7 +675,7 @@ ORDER BY "Sales of items over 90 proof" DESC
 ---3773:    $173,803.96
 ---2599:    $170,751.64
 
---For output, see sheet 12.
+--For output, see [sheet 12](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=2013826773).
 
 ```sql
 
@@ -693,7 +692,7 @@ data and graph
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1-graph.JPG "Title")
 
---For output, see sheet 13.
+--For output, see [sheet 13](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=402802774).
 
 ```sql
 
@@ -715,7 +714,7 @@ data and graph
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1-graph.JPG "Title")
 
---For output, see sheet 14.
+--For output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
 ### Conclusions
 
