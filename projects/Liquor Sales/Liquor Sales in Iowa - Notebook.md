@@ -500,7 +500,7 @@ WHERE total_sales > 2000000
 
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
+![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
 
 --For output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
@@ -516,13 +516,9 @@ FROM (SELECT store, AVG(cast(btl_price AS numeric)) AS average_bottle_price
     ORDER BY average_bottle_price DESC) AS l
 WHERE average_bottle_price > 20
 
---Twenty-two stores have an average bottle price greater than $20.
-
 ```
 
-![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
-
---For output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
+Twenty-two stores have an average bottle price greater than $20.
 
 ```sql
 
@@ -534,7 +530,6 @@ FROM (SELECT store, county, round(AVG(cast(btl_price AS numeric)), 2) AS average
     GROUP BY store, county
     ORDER BY average_bottle_price DESC) AS l
 WHERE average_bottle_price > 20 and county IS NOT NULL
-
 
 ```
 
