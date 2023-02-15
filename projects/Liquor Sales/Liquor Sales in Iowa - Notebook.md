@@ -1,6 +1,6 @@
 # Liquor Sales in Iowa
 
-### Prompt
+## Prompt
 You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa. Various vendors want to increase their statewide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about upcoming campaigns. 
 
 You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors. 
@@ -8,7 +8,7 @@ You’ll focus on how to allocate a marketing budget throughout the state. You c
 It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa.
 
 
-### Summary of Analysis
+## Summary of Analysis
 
 1. Reviewed revenue (total sales)
 2. Found top liquor categories and brands, stores and counties by exploring the Sales table using aggregates and CASE statements
@@ -20,14 +20,13 @@ It will be up to you to decide if the marketing budget should be focused on grow
 
 To review data, see this spreadsheet: [Liquor Sales in Iowa - Data and Analysis](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true)
 
-### Analysis
+## Analysis
 
-##### 01. Determine the types of Products Sold and Average Cost per Case.
+### 01. What types of products are sold? What is the average cost per case?
 
 ```sql
 
 --Type of Product Sold and Average Cost per Case    
-
 SELECT DISTINCT category_name AS "Type of Product Sold", round((AVG(case_cost)), 2) AS "Average Cost per Case"
 FROM products
 WHERE category_name IS NOT NULL 
@@ -38,13 +37,14 @@ ORDER BY "Average Cost per Case" DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/01.JPG "Title")
 
---For output, see [sheet 01](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=14798079).
+For output, see [sheet 01](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=14798079).
 
+
+### 02. What are total sales aggregated by Store, Vendor and Type of Product?
 
 ```sql
 
 --Total Sales by Store, Vendor and Type of Product  
-
 SELECT stores.name AS "Store Name", products.vendor_name AS "Vendor Name", products.category_name AS "Type of Product", SUM(sales.total) AS "Total Sales"
 FROM products
 
@@ -62,17 +62,14 @@ LIMIT 100;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/02.JPG "Title")
 
---For output, see [sheet 02](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=654930356).
+For output, see [sheet 02](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=654930356).
 
---Will summarize the products represented by different types of stores in counties throughout the state. 
---Questions
----How many total products are in the product table? 
----How about products by vendor or category?
+
+### 03. How many products, vendors and categories are in the product table?
 
 ```sql
 
---Summarize the products represented by different types of stores in counties throughout the state. How many total products are in the product table?
-
+--Total products are in the product table
 SELECT DISTINCT category_name, COUNT(category_name)
 FROM sales
 WHERE category_name IS NOT NULL
@@ -82,38 +79,33 @@ GROUP BY category_name;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-2.JPG "Title")
 
---There are 68 unique products. 
---For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
+There are *68 unique products*.
 
-2nd screenshot
+For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
 ```sql
 
---How about products by vendor or category?
-
+--Products by vendor and category
 SELECT DISTINCT vendor, category_name, COUNT(category_name) AS "Number of item"
 FROM sales
 WHERE category_name IS NOT NULL and vendor IS NOT NULL
 GROUP BY category_name, vendor
 ORDER BY vendor;
 
-
 ```
-
-1st screenshot
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-1.JPG "Title")
 
---For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
+[Answer]
+
+For output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
 
---Will review and evaluate the Sales table. 
----Which products sell the best? 
+### 04. Which products sell the best? 
 
 ```sql
 
---Review the Sales table. Which products sell the best?   
-
+--Reviewing the Sales table: Which products sell the best?   
 SELECT "Type of Product Sold", SUM(total) as "Total Sales"
 FROM (SELECT category_name AS "Type of Product Sold", total
     FROM sales
@@ -123,19 +115,18 @@ ORDER BY "Total Sales" DESC;
 
 ```
 
-1st screenshot and graph
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-1-graph.JPG "Title")
 
 
---For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
+For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
---Joining Sales tablw with the Counties table. 
----What areas of the state sell more liquor than others? 
+### 04. Which types of alcohol are the most popular?
 
 ```sql
 
+--Joining Sales table with the Counties table. 
+--What areas of the state sell more liquor than others?
 SELECT description, category_name, SUM(total) AS "Total Sales"
 FROM (SELECT description, category_name, total
     FROM sales
@@ -143,21 +134,21 @@ FROM (SELECT description, category_name, total
 GROUP BY description, category_name
 ORDER BY "Total Sales" DESC;    
 
-
 ```
-
-2nd screenshot and graph
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2-graph.JPG "Title")
 
+Whiskies are the most popular.
 
---For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
+For output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
+
+
+### 05. What areas of the state sell more liquor than others? 
 
 ```sql
 
 --Review the Counties table. What areas of the state sell more liquor than others?  
-
 SELECT sales.county, counties.population, SUM(sales.total) as "Total Sales"
 FROM sales
 LEFT JOIN counties
@@ -165,23 +156,16 @@ ON sales.county = counties.county
 GROUP BY sales.county, counties.population
 ORDER BY "Total Sales" DESC;
 
-
 ```
 
-data, and 2 graphs
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1.JPG "Title")
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-1.JPG "Title")
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-2.JPG "Title")
 
+For output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
 
---For output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
 
-
---Exploring sales data 		
----What are the top 10 categories of liquor sold based on the total amount of sales revenue? 	
+### 06. What are the top 10 categories of liquor sold based on the total amount of sales revenue? 	
 
 ```sql
 ---Total Sales by Type of Product:
@@ -292,8 +276,6 @@ FROM (SELECT category_name AS "Type of Product Sold", SUM(total) AS "Total Sales
 
 ```
 
-data, and 2 graphs
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1.JPG "Title")
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1-graph-1.JPG "Title")
@@ -301,11 +283,13 @@ data, and 2 graphs
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/06-1-graph-2.JPG "Title")
 
 
---For output, see [sheet 06](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=300400124).
+For output, see [sheet 06](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=300400124).
 
-## Which rum, whiskey and vodka products have sales greater than $10,000?
+
+### 07. Which rum, whiskey and vodka products have sales greater than $10,000?
 
 ```sql
+
 ---Rum:
 
 SELECT "Type of Rum Products Sold"
@@ -320,8 +304,7 @@ GROUP BY "Type of Rum Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-1.JPG "Title")
 
-
---For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
+For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
 ```sql
 
@@ -339,15 +322,10 @@ GROUP BY "Type of Whiskey Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-2.JPG "Title")
 
+For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
---For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
-
-
-
---Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well?
 
 ```sql
-
 
 ---Vodka: 
 
@@ -359,18 +337,14 @@ FROM (SELECT category_name AS "Type of Vodka Products Sold", total
     ORDER BY total DESC) AS l
 GROUP BY "Type of Vodka Products Sold"; 
 
-
 ```
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-3.JPG "Title")
 
+For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
---For output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
-
---What is the trend of sales by month? 
-
----Sales per item categorized by expensive, medium and cheap:
+### 08. Which county sold the most amount of vodka during February 2014? Is this among the counties that sold the most vodka in other months of 2014 as well?
 
 ```sql
 
@@ -390,34 +364,19 @@ WHERE month_date = 2 AND year_date = 2014
 GROUP BY county
 ORDER BY "Vodka Sales in February 2014" DESC
 
-
 ```
-
-data and graph
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/08-1.JPG "Title")
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/08-1-graph.JPG "Title")
 
----Top 10 counties with the highest vodka sales 2/2014
 
----Polk: 699113.42
----Linn: 271014.73
----Scott: 243703.73
----Johnson: 221415
----Black Hawk: 208446.96
----Pottawattamie: 118724.34
----Dubuque: 99071.28
----Story: 96807.7
----Woodbury: 93486.75
----Dallas: 64481.86
+The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
 
---The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
-
---For output, see [sheet 08](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=354736027).
+For output, see [sheet 08](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=354736027).
 
 
-## What is the trend of sales by month? Will break up variables such as bottle_price or liter_size into categories (for example: cheap, medium, or expensive). Extract the data and graph out sales over time in Excel. 
+### 09. What is the trend of sales by month? What are the total sales per month? What are the total number of bottles sold per month?
 
 ```sql
 
@@ -443,12 +402,11 @@ WHERE category_name IS NOT NULL
 GROUP BY category_name, btl_price, bottle_cost, month_date, year_date
 ORDER BY btl_price DESC;
 
-
 ```
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-1.JPG "Title")
 
---For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 ```sql
 
@@ -462,12 +420,11 @@ ORDER BY month_and_date ASC;
 
 ```
 
-data and graph
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2-graph.JPG "Title")
 
---For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 ```sql
 
@@ -479,15 +436,14 @@ FROM sales
 GROUP BY month_and_date
 ORDER BY month_and_date ASC;
 
-
 ```
-
-data and graph
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3-graph.JPG "Title")
 
---For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+For output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+
+### 10. What are the most expensive bottles? Which stores sell bottles priced over $2000?
 
 ```sql
 
@@ -504,10 +460,10 @@ ORDER BY btl_price DESC;
 
 ```
 
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-1.JPG "Title")
 
---For output, see [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480).
+For output, see [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480).
+
 
 ```sql
 
@@ -518,17 +474,17 @@ FROM sales
 WHERE cast(btl_price AS numeric) > 2000
 ORDER BY btl_price DESC;
 
-
 ```
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-2.JPG "Title")
 
 
---The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
+The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
 
---From the output in [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480), we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
+From the output in [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480), we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
 
---How many stores have more than $2,000,000 in total sales?
+### 11. How many stores have more than $2,000,000 in total sales? How many stores have an average bottle price greater than $20?  
+
 ```sql
 
 --How many stores have more than $2,000,000 in total sales?     
@@ -584,7 +540,9 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-2.JPG "Title")
 
---For output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
+For output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
+
+### 12. Which stores have the highest sales of items over 90 proof?  
 
 ```sql
 
@@ -601,14 +559,14 @@ FROM (SELECT *
 GROUP BY store
 ORDER BY "Sales of items over 90 proof" DESC
 
-
-
 ```
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/12-1.JPG "Title")
 
+For output, see [sheet 12](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=2013826773).
 
---For output, see [sheet 12](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=2013826773).
+
+### 13. Which liquor has a per bottle profit margin that is greater than 50%?
 
 ```sql
 
@@ -620,12 +578,14 @@ WHERE (btl_price - state_btl_cost) >= (btl_price/2) AND category_name NOT LIKE '
 ORDER BY btl_price DESC;
 
 ```
-data and graph
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/13-1-graph.JPG "Title")
 
---For output, see [sheet 13](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=402802774).
+For output, see [sheet 13](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=402802774).
+
+
+### 14. Which stores have the highest total sales? 
 
 ```sql
 
@@ -638,18 +598,16 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
     GROUP BY store, county
     ORDER BY total_sales DESC) AS l;
 
-
-
 ```
 
-data and graph 
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/14-1-graph.JPG "Title")
 
---For output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
+For output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
-### Conclusions
+
+## Conclusions
 
 Generally, vendors should focus on building partnerships with the highest-earning stores in the most-populated counties. In order to convert them to long-term customers, you should aggressively negotiate a wholesale discount for their most popular whiskey, vodka and rum products. Specifically, you should:
 1. Focus on supplying whiskey, vodka and rum, specifically canadian whisky, 80 proof vodka, and spiced rum as these are the products that are most in-demand.
