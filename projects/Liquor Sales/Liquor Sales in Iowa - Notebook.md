@@ -8,16 +8,15 @@ You’ll focus on how to allocate a marketing budget throughout the state. You c
 It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa.
 
 
-## Summary of Analysis
+## High-Level Summary of Analysis
 1. Reviewed revenue (total sales)
-2. Found top liquor categories and brands, stores and counties by exploring the Sales table using aggregates and CASE statements
-3. Found revenue and total bottles sold by month using date_part function
-4. Explored possible data errors using date_part and aggregate functions
-5. Excluded NULLS from analysis
-6. Used SQL to clean, catalog, organize and export data for further analysis
-7. Used Excel to analyze and visualize data
+2. Found top liquor categories and brands, stores and counties by exploring the Sales table
+3. Found revenue and total bottles sold by month
+4. Explored possible data errors and excluded NULLS from analysis
+5. Used SQL to clean, catalog, organize and export data for further analysis
+6. Used Excel to analyze and visualize data
 
-To review data, see this spreadsheet: [Liquor Sales in Iowa - Data and Analysis](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true)
+To review raw data exports and graphs created using Excel, see this spreadsheet: [Liquor Sales in Iowa - Data and Analysis](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit?usp=sharing&ouid=109339496547627177726&rtpof=true&sd=true)
 
 ## Analysis
 
@@ -68,7 +67,7 @@ For full data output, see [sheet 02](https://docs.google.com/spreadsheets/d/10Uy
 
 ```sql
 
---Total products are in the product table
+--Total products in the product table
 SELECT DISTINCT category_name, COUNT(category_name)
 FROM sales
 WHERE category_name IS NOT NULL
@@ -84,7 +83,7 @@ For full data output, see [sheet 03](https://docs.google.com/spreadsheets/d/10Uy
 
 ```sql
 
---Products by vendor and category
+--Products agregatted by vendor and category
 SELECT DISTINCT vendor, category_name, COUNT(category_name) AS "Number of item"
 FROM sales
 WHERE category_name IS NOT NULL and vendor IS NOT NULL
@@ -95,7 +94,6 @@ ORDER BY vendor;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/03-1.JPG "Title")
 
-[Answer]
 
 For full data output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
@@ -125,8 +123,7 @@ For full data output, see [sheet 04](https://docs.google.com/spreadsheets/d/10Uy
 
 ```sql
 
---Joining Sales table with the Counties table. 
---What areas of the state sell more liquor than others?
+--Most popular types of alcohol
 SELECT description, category_name, SUM(total) AS "Total Sales"
 FROM (SELECT description, category_name, total
     FROM sales
@@ -148,7 +145,7 @@ For full data output, see [sheet 04](https://docs.google.com/spreadsheets/d/10Uy
 
 ```sql
 
---Review the Counties table. What areas of the state sell more liquor than others?  
+--Which counties ell more liquor than others?  
 SELECT sales.county, counties.population, SUM(sales.total) as "Total Sales"
 FROM sales
 LEFT JOIN counties
@@ -162,13 +159,16 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-2.JPG "Title")
 
+The top 5 counties are Polk, Linn, Scott, Johnson and Black Hawk. This strongly correlates with the population size of each county.
+
 For full data output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
+
 
 
 ### 06. What are the top 10 categories of liquor sold based on the total amount of sales revenue? 	
 
 ```sql
----Total Sales by Type of Product:
+---Total Sales by Type of Product
 
 SELECT "Type of Product Sold", SUM(total) AS "Total Sales"
 FROM (SELECT category_name AS "Type of Product Sold", total
@@ -370,8 +370,9 @@ ORDER BY "Vodka Sales in February 2014" DESC
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/08-1-graph.JPG "Title")
 
+*Polk* by far sold the largest amount of vodka.
 
-The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month.
+_Note: The top 5 counties listed above are exactly the same for each month of 2014, while the others change their relative positions from month to month._
 
 For full data output, see [sheet 08](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=354736027).
 
@@ -404,9 +405,12 @@ ORDER BY btl_price DESC;
 
 ```
 
+First, I categorized all bottles by price, sorting them into Expensive, Medium, and Cheap buckets. 
+
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-1.JPG "Title")
 
-For full data output,see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+
+Next, I graphed the Total Liquor Sales by Month and the Total Bottles Sold by month.
 
 ```sql
 
@@ -424,7 +428,7 @@ ORDER BY month_and_date ASC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2-graph.JPG "Title")
 
-For full data output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
+
 
 ```sql
 
@@ -441,17 +445,15 @@ ORDER BY month_and_date ASC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3-graph.JPG "Title")
 
+As we can see, both graphs are almost identical, and tell the same story: sales peaked in April, and were on a downward trend into the next year.
+
+
 For full data output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
 
 
 ### 10. What are the most expensive bottles? Which stores sell bottles priced over $2000?
 
 ```sql
-
---Summarize your exploration of stores in your presentation. Some sample questions you could answer include:    
-
---Which stores sell one of the top five most expensive bottles of alcohol?  
-
 
 ---List of products by bottle price:
 
