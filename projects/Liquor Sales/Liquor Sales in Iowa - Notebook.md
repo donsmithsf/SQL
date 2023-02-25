@@ -1,6 +1,6 @@
 # Liquor Sales in Iowa
 
-## Prompt
+## Problem Statement
 You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa. Various vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about upcoming campaigns. 
 
 You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors. 
@@ -98,7 +98,7 @@ ORDER BY vendor;
 For full data output, see [sheet 03](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1449464661).
 
 
-### 04. Which products sell the best? 
+### 04. Which products sell the best? Which types of alcohol are the most popular?
 
 ```sql
 
@@ -119,8 +119,6 @@ ORDER BY "Total Sales" DESC;
 For full data output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
 
-### 04. Which types of alcohol are the most popular?
-
 ```sql
 
 --Most popular types of alcohol
@@ -136,7 +134,7 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2-graph.JPG "Title")
 
-Whiskies are the most popular.
+CANADIAN WHISKIES have the highest sales, totaling $48,053,061.91. Whiskies are also the most popular type of alcohol, occupying 7 of the 20 most popular categories.
 
 For full data output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
