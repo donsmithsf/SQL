@@ -608,8 +608,8 @@ Generally, vendors should focus on building partnerships with the highest-earnin
 2. Focus on the following brands: Black Velvet, Hawkeye Vodka and Captain Morgan from those respective categories
 3. Focus on building partnerships with and supplying stores in the following three counties: Polk, Linn and Scott
 4. Focus on getting your product in the following high-revenue stores within those respective counties: 
-    1. Polk: 2633, 4829, 3420
-    2. Linn: 3385, 3773
-    3. Scott: 3952, 3354, 2625
+    1. *Polk:* 2633, 4829, 3420
+    2. *Linn:* 3385, 3773
+    3. *Scott:* 3952, 3354, 2625
 5. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline
 
