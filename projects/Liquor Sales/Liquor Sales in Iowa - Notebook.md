@@ -422,10 +422,8 @@ ORDER BY month_and_date ASC;
 
 ```
 
-
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-2-graph.JPG "Title")
-
 
 
 ```sql
@@ -463,8 +461,8 @@ ORDER BY btl_price DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-1.JPG "Title")
 
-For full data output, see [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480).
 
+The most expensive category is SINGLE BARREL BOURBON WHISKIES, which has a bottle price of $8,700.00.
 
 ```sql
 
@@ -480,9 +478,7 @@ ORDER BY btl_price DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-2.JPG "Title")
 
 
-The most expensive is SINGLE BARREL BOURBON WHISKIES at $8,700.00 per bottle. Will search for which stores sell this bottle.
-
-From the output in [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480), we can see that stores 2588 and 2590 sell SINGLE BARREL BOURBON WHISKIES.
+For full data output, see [sheet 10](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1409709480).
 
 
 ### 11. How many stores have more than $2,000,000 in total sales? How many stores have an average bottle price greater than $20?  
@@ -498,11 +494,11 @@ FROM (SELECT store, SUM(total) AS total_sales
     ORDER BY total_sales DESC) AS l
 WHERE total_sales > 2000000
 
---Twenty-four stores have sales greater than two million.
-
 ```
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
+
+Twenty-four stores have sales greater than two million.
 
 For full data output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
@@ -520,8 +516,6 @@ WHERE average_bottle_price > 20
 
 ```
 
-Twenty-two stores have an average bottle price greater than $20.
-
 ```sql
 
 --Where are these stores located throughout the state and what does that mean?  
@@ -537,7 +531,10 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-2.JPG "Title")
 
+Twenty-two stores have an average bottle price greater than $20.
+
 For full data output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
+
 
 ### 12. Which stores have the highest sales of items over 90 proof?  
 
