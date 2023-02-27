@@ -1,7 +1,7 @@
 # Liquor Sales in Iowa, USA
 
 ## Problem Statement
-You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa, USA on behalf of a coalition of 10 liquor vendors who sale bottles of alcohol wholesales to stores around Iowa. These vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about their upcoming marketing campaigns, to determine which stores to target and which products to market. The vendors are hyperfocused on increasing sales and getting an edge on their competitors, i.e., the other liquor venders in Iowa.
+You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa, USA on behalf of a coalition of 10 liquor vendors who sell bottles of alcohol wholesales to stores around Iowa. These vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about their upcoming marketing campaigns, to determine which stores to target and which products to market. The vendors are hyper-focused on increasing sales and getting an edge on their competitors, i.e., the other liquor venders in Iowa.
 
 You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors–how you structure your analysis is up to you.
 
