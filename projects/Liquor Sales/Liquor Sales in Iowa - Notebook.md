@@ -35,7 +35,7 @@ ORDER BY "Average Cost per Case" DESC;
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/01.JPG "Title")
 
-For full data output, see [sheet 01](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=14798079).
+&rarr; For full data output, see [sheet 01](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=14798079).
 
 
 ### 02. What are total sales aggregated by Store, Vendor and Type of Product?
