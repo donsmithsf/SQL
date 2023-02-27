@@ -1,15 +1,15 @@
 # Liquor Sales in Iowa
 
 ## Problem Statement
-You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa. Various vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about upcoming campaigns. 
+You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa. Various vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about upcoming marketing campaigns. 
 
-You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors. 
+You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors–how you structure your analysis is up to you.
 
-It will be up to you to decide if the marketing budget should be focused on growth opportunity in small or mid- sized liquor stores or on dealing with brands or types of liquor that already have large market shares in Iowa.
+You will need to decide if the marketing budget should be focused on growth opportunities in small- or mid-sized liquor stores, or on dealing with brands or types of liquor that already have large market shares in Iowa.
 
 
 ## High-Level Summary of Analysis
-1. Reviewed revenue (total sales)
+1. Determined revenue (total sales)
 2. Found top liquor categories and brands, stores and counties by exploring the Sales table
 3. Found revenue and total bottles sold by month
 4. Explored possible data errors and excluded NULLS from analysis
@@ -601,15 +601,18 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 For full data output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
 
-## Conclusions
-Generally, vendors should focus on building partnerships with the highest-earning stores in the most-populated counties. In order to convert them to long-term customers, you should aggressively negotiate a wholesale discount for their most popular whiskey, vodka and rum products. Specifically, you should:
+## Recommendations
+Vendors should focus on marketing brands and types of liquor that already have a large market share. They should focus on building partnerships with the highest-earning stores in the most-populated counties. In order to convert these stores to long-term customers and carrieres of their products, they should aggressively negotiate a wholesale discount for their most popular whiskey, vodka and rum products. 
 
-1. Focus on supplying whiskey, vodka and rum, specifically canadian whisky, 80 proof vodka, and spiced rum as these are the products that are most in-demand.
-2. Focus on the following brands: Black Velvet, Hawkeye Vodka and Captain Morgan from those respective categories
-3. Focus on building partnerships with and supplying stores in the following three counties: Polk, Linn and Scott
-4. Focus on getting your product in the following high-revenue stores within those respective counties: 
-    1. *Polk:* 2633, 4829, 3420
-    2. *Linn:* 3385, 3773
-    3. *Scott:* 3952, 3354, 2625
+### Summary:
+
+1. Focus on supplying **whiskey**, **vodka** and **rum**, specifically **canadian whisky**, **80 proof vodka**, and **spiced rum** as these are the products with the largest market share that are most in-demand
+2. Focus on the following brands: **Black Velvet**, **Hawkeye Vodka** and **Captain Morgan** from those respective categories
+3. Focus on building partnerships with and supplying stores in the following three counties: **Polk**, **Linn** and **Scott**
+4. Focus on getting the product in the following high-revenue stores within those respective counties: 
+    1. **Polk:** 2633, 4829, 3420
+    2. **Linn:** 3385, 3773
+    3. **Scott:** 3952, 3354, 2625
 5. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline
+
 
