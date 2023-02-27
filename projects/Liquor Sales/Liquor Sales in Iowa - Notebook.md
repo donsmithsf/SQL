@@ -134,7 +134,7 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/04-2-graph.JPG "Title")
 
-CANADIAN WHISKIES have the highest sales, totaling $48,053,061.91. Whiskies are also the most popular type of alcohol, occupying 7 of the 20 most popular categories.
+**CANADIAN WHISKIES** have the highest sales, totaling **$48,053,061.91**. Whiskies are also the most popular type of alcohol, occupying 7 of the 20 most popular categories.
 
 &rarr; For full data output, see [sheet 04](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1499019211).
 
@@ -157,7 +157,7 @@ ORDER BY "Total Sales" DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-1.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/05-1-graph-2.JPG "Title")
 
-The top 5 counties are Polk, Linn, Scott, Johnson and Black Hawk. This strongly correlates with the population size of each county.
+The top 5 counties are **Polk**, **Linn**, **Scott**, **Johnson** and **Black Hawk**. This strongly correlates with the population size of each county.
 
 &rarr; For full data output, see [sheet 05](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1688657117).
 
@@ -338,7 +338,7 @@ GROUP BY "Type of Vodka Products Sold";
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/07-3.JPG "Title")
 
-For full data output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
+&rarr; For full data output, see [sheet 07](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=970534761).
 
 
 
@@ -403,12 +403,12 @@ ORDER BY btl_price DESC;
 
 ```
 
-First, I categorized all bottles by price, sorting them into Expensive, Medium, and Cheap buckets. 
+First, I categorized all bottles by price, sorting them into **Expensive**, **Medium**, and **Cheap** buckets. 
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-1.JPG "Title")
 
 
-Next, I graphed the Total Liquor Sales by Month and the Total Bottles Sold by month.
+Next, I graphed the **Total Liquor Sales by Month** and the **Total Bottles Sold by Month**.
 
 ```sql
 
@@ -462,7 +462,7 @@ ORDER BY btl_price DESC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/10-1.JPG "Title")
 
 
-The most expensive category is SINGLE BARREL BOURBON WHISKIES, which has a bottle price of $8,700.00.
+The most expensive category is **SINGLE BARREL BOURBON WHISKIES**, which has a bottle price of **$8,700.00**.
 
 ```sql
 
@@ -498,7 +498,7 @@ WHERE total_sales > 2000000
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-1.JPG "Title")
 
-Twenty-four stores have sales greater than two million.
+**Twenty-four stores** have sales greater than **$2,000,000**.
 
 &rarr; For full data output, see [sheet 14](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=771702106).
 
@@ -531,7 +531,7 @@ WHERE average_bottle_price > 20 and county IS NOT NULL
 
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/11-2.JPG "Title")
 
-Twenty-two stores have an average bottle price greater than $20.
+**Twenty-two stores** have an average bottle price greater than **$20**.
 
 &rarr; For full data output, see [sheet 11](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=1363682823).
 
@@ -604,13 +604,13 @@ FROM (SELECT DISTINCT store, county, SUM(total) AS total_sales
 ## Recommendations
 1. Focus on supplying **whiskey**, **vodka** and **rum**, specifically **canadian whisky**, **80 proof vodka**, and **spiced rum** as these are the products that sold the best, with the largest market share that are most in-demand
 2. Focus on the following brands: **Black Velvet**, **Hawkeye Vodka** and **Captain Morgan** from those respective categories
-3. Of the top 6 high-margin bottles of alcohol, BLENDED WHISKIES occupy spots 5 and 6, **Country Gal** and **Prairie Fire** respectively. Since whiskies are the top selling category, vendors should attempt to heavily market these high margin products to improve the bottom line.
+3. Of the top 6 high-margin bottles of alcohol, **BLENDED WHISKIES** occupy spots 5 and 6, **Country Gal** and **Prairie Fire** respectively. Since whiskies are the top selling category, vendors should attempt to heavily market these high margin products to improve the bottom line
 4. Focus on building partnerships with and supplying stores in the following three counties: **Polk**, **Linn** and **Scott**
 5. Focus on getting the product in the following high-revenue stores within those respective counties: 
     1. **Polk:** 2633, 4829, 3420
     2. **Linn:** 3385, 3773
     3. **Scott:** 3952, 3354, 2625
-6. Focus on selling alcohol to these stores in the beginning of the year (**January-April**), when sales are at their highest, and therefore demand is at its highest.
+6. Focus on selling alcohol to these stores in the beginning of the year (**January-April**), when sales are at their highest, and therefore demand is at its highest
 7. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline
 
 
