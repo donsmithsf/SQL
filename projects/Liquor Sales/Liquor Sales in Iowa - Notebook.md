@@ -1,7 +1,7 @@
-# Liquor Sales in Iowa
+# Liquor Sales in Iowa, USA
 
 ## Problem Statement
-You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa. Various vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about upcoming marketing campaigns. 
+You’ve been hired as an analyst for a consulting company tasked with running a marketing campaign on liquor sales in Iowa, USA on behalf of a coalition of 10 liquor vendors who sale bottles of alcohol wholesales to stores around Iowa. These vendors want to increase their state-wide marketing efforts, and your boss has asked you to analyze consumer purchasing data in order to make smarter decisions about their upcoming marketing campaigns, to determine which stores to target and which products to market. The vendors are hyperfocused on increasing sales and getting an edge on their competitors, i.e., the other liquor venders in Iowa.
 
 You’ll focus on how to allocate a marketing budget throughout the state. You could concentrate on specific types of liquor, counties in the state, or on a certain group of vendors–how you structure your analysis is up to you.
 
@@ -9,9 +9,9 @@ You will need to decide if the marketing budget should be focused on growth oppo
 
 
 ## High-Level Summary of Analysis
-1. Determined revenue (total sales)
-2. Found top liquor categories and brands, stores and counties by exploring the Sales table
-3. Found revenue and total bottles sold by month
+1. Determined revenue for each store
+2. Determined top liquor categories and brands, and highest earning stores and counties
+3. Determined revenue and total bottles sold by month
 4. Explored possible data errors and excluded NULLS from analysis
 5. Used SQL to clean, catalog, organize and export data for further analysis
 6. Used Excel to analyze and visualize data
@@ -441,7 +441,7 @@ ORDER BY month_and_date ASC;
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3.JPG "Title")
 ![alt text](https://github.com/donsmithsf/sql/blob/main/projects/Liquor%20Sales/images/09-3-graph.JPG "Title")
 
-As we can see, both graphs are almost identical, and tell the same story: sales peaked in April, and were on a downward trend into the next year.
+As we can see, both graphs are almost identical, and tell the same story: sales are at their highest in the beginning of the year, peak in April, and were on a downward trend into the next year.
 
 
 For full data output, see [sheet 09](https://docs.google.com/spreadsheets/d/10UyaPNjSQ5P8mbF65DzHEpd5mrrnMyNY/edit#gid=467741207).
@@ -602,17 +602,16 @@ For full data output, see [sheet 14](https://docs.google.com/spreadsheets/d/10Uy
 
 
 ## Recommendations
-Vendors should focus on marketing brands and types of liquor that already have a large market share. They should focus on building partnerships with the highest-earning stores in the most-populated counties. In order to convert these stores to long-term customers and carrieres of their products, they should aggressively negotiate a wholesale discount for their most popular whiskey, vodka and rum products. 
-
-### Summary:
-
-1. Focus on supplying **whiskey**, **vodka** and **rum**, specifically **canadian whisky**, **80 proof vodka**, and **spiced rum** as these are the products with the largest market share that are most in-demand
+1. Focus on supplying **whiskey**, **vodka** and **rum**, specifically **canadian whisky**, **80 proof vodka**, and **spiced rum** as these are the products that sold the best, with the largest market share that are most in-demand
 2. Focus on the following brands: **Black Velvet**, **Hawkeye Vodka** and **Captain Morgan** from those respective categories
-3. Focus on building partnerships with and supplying stores in the following three counties: **Polk**, **Linn** and **Scott**
-4. Focus on getting the product in the following high-revenue stores within those respective counties: 
+3. Of the top 6 high-margin bottles of alcohol, BLENDED WHISKIES occupy spots 5 and 6, **Country Gal** and **Prairie Fire** respectively. Since whiskies are the top selling category, vendors should attempt to heavily market these high margin products to improve the bottom line.
+4. Focus on building partnerships with and supplying stores in the following three counties: **Polk**, **Linn** and **Scott**
+5. Focus on getting the product in the following high-revenue stores within those respective counties: 
     1. **Polk:** 2633, 4829, 3420
     2. **Linn:** 3385, 3773
     3. **Scott:** 3952, 3354, 2625
-5. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline
+6. Focus on selling alcohol to these stores in the beginning of the year (**January-April**), when sales are at their highest, and therefore demand is at its highest.
+7. In order to convert each store to a long-term customer, negotiate with them a bulk discount, making sure whenever possible to undercut other vendors while still keeping a healthy bottomline
+
 
 
